@@ -4,6 +4,7 @@ describe('Tests', () => {
 
 
   describe('renderInlineElement', () => {
+    // TODO flesh out these test cases if I have time
     it('should render links', () => {
       const input = { type: "link", content: "link in it", url: "https://example.com" }
       const result = renderInlineElement(input)
