@@ -20,7 +20,7 @@ function renderDocument(){
 function renderBlockElement(){}
 
 
-function renderInlineElement(element: InlineElement){
+export function renderInlineElement(element: InlineElement){
   const {type, content, url} = element;
   //this was too clever
   // const elementTag = type === 'link' ? 'a':'p'
