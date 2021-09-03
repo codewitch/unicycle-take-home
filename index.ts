@@ -1,7 +1,7 @@
 
 // TODO: maybe create types for each type of block elment, since they seem to have different constraints for their children
 interface BlockElement {
-  type: string;
+  type: "paragraph" | "blockquote" | "list" | "list-item" | "document";
   children: Array<InlineElement | BlockElement>
 }
 
@@ -12,12 +12,17 @@ interface InlineElement {
 }
 
 
-function renderDocument(){
+export function renderDocument(){
 
 }
 
 
-function renderBlockElement(){}
+export function renderBlockElement(element: BlockElement){
+  const {type, children} = element
+
+
+
+}
 
 
 export function renderInlineElement(element: InlineElement){
