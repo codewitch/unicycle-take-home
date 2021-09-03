@@ -14,7 +14,7 @@ interface InlineElement {
 
 export function renderDocument(document: BlockElement){
   const {children = []} = document
-  children.forEach((child) => renderBlockElement(child))
+  return`<article class="email">${children.forEach((child) => renderBlockElement(child))}</article>`
 }
 
 
