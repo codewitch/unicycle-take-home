@@ -6,9 +6,9 @@ interface BlockElement {
 }
 
 interface InlineElement {
-  type: string;
+  type: "text" | "link";
   content: string;
-  url?: string
+  url?: string;
 }
 
 
@@ -20,4 +20,18 @@ function renderDocument(){
 function renderBlockElement(){}
 
 
-function renderInlineElement(){}
+function renderInlineElement(element: InlineElement){
+  const {type, content, url} = element;
+  //this was too clever
+  // const elementTag = type === 'link' ? 'a':'p'
+  // return `<${elementTag} ${type === 'link'}>${content}</${elementTag}>`
+
+  if(type === 'link'){
+    return`<a href=${url}>${content}</a>`
+  }
+  else if(type === 'text'){
+    return`<p>${content}</p>`
+  } else {
+    console.error('element is not of type link or text')
+  }
+}
